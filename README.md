@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 I build this repo during doing stevekinney's course [State Management in Pure React](https://frontendmasters.com/courses/pure-react-state). So I cloned his basic [repo](https://github.com/stevekinney/user-signup-react-state) and build along with the course with some of my own modification.
+=======
+*I build this repo during doing stevekinney's course [State Management in Pure React](https://frontendmasters.com/courses/pure-react-state). So I cloned his basic [repo](https://github.com/stevekinney/user-signup-react-state) and build along with the course with some of my own modifications.*
+>>>>>>> 12f4e71820925af406a735df46a9076b2919f919
 
 # Amazing Unicorn Startup
 
