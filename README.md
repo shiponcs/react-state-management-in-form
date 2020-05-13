@@ -1,3 +1,5 @@
+*I build this repo during doing stevekinney's course [State Management in Pure React](https://frontendmasters.com/courses/pure-react-state). So I cloned his basic [repo](https://github.com/stevekinney/user-signup-react-state) and build along with the course with some of my own modifications.*
+
 # Amazing Unicorn Startup
 
 In the base `master` branch, we have a mostly functional form. But, there are two problems.
