@@ -1,3 +1,5 @@
+I build this repo during doing stevekinney's course [State Management in Pure React](https://frontendmasters.com/courses/pure-react-state). So I cloned his basic [repo](https://github.com/stevekinney/user-signup-react-state) and build along with the course with some of my own modification.
+
 # Amazing Unicorn Startup
 
 In the base `master` branch, we have a mostly functional form. But, there are two problems.
@@ -16,7 +18,7 @@ Could we create a hook that mostly works like `this.setState`.
 ## Creating the Hook
 
 ```js
-import { useReducer } from 'react';
+import { useReducer } from "react";
 
 const reducer = (previousState = {}, updatedState = {}) => {
   return { ...previousState, ...updatedState };
@@ -25,7 +27,7 @@ const reducer = (previousState = {}, updatedState = {}) => {
 const useSetState = (initialState = {}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const setState = updatedState => dispatch(updatedState);
+  const setState = (updatedState) => dispatch(updatedState);
 
   return [state, setState];
 };
@@ -41,19 +43,19 @@ We just make an object for the initial state of the form.
 
 ```js
 const initialState = {
-  userName: '',
-  email: '',
-  password: '',
-  passwordConfirmation: ''
+  userName: "",
+  email: "",
+  password: "",
+  passwordConfirmation: "",
 };
 ```
 
 We can add a dymanic function for changing the state based on the field name.
 
 ```js
-const handleChange = event => {
+const handleChange = (event) => {
   setState({
-    [event.target.name]: event.target.value
+    [event.target.name]: event.target.value,
   });
 };
 ```
@@ -76,14 +78,14 @@ And now, each input field can be refactored somewhere along the lines of this fi
 You could also implement this without a reducer, but I prefer the previous patter.
 
 ```js
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from "react";
 
-const useSetState = initialState => {
+const useSetState = (initialState) => {
   const [state, set] = useState(initialState);
 
   const setState = useCallback(
-    updatedState => {
-      set(previousState => ({ ...previousState, ...updatedState }));
+    (updatedState) => {
+      set((previousState) => ({ ...previousState, ...updatedState }));
     },
     [set]
   );
@@ -92,5 +94,4 @@ const useSetState = initialState => {
 };
 
 export default useSetState;
-
 ```
